@@ -141,6 +141,7 @@ def deleteRoom(request, pk):
 
 
 def deleteMessage(request, pk):
+
     
     message = Message.objects.get(id=pk)
 
@@ -151,3 +152,9 @@ def deleteMessage(request, pk):
         message.delete()
         return redirect('home')
     return render(request, 'base/delete.html', {'obj': messages})
+
+
+
+def userProfile(request):
+    context = {}
+    return render(request, 'base/profile.html', context)
