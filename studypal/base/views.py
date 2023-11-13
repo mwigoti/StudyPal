@@ -155,6 +155,7 @@ def deleteMessage(request, pk):
 
 
 
-def userProfile(request):
-    context = {}
+def userProfile(request, pk):
+    user = User.objects.get(id=pk)
+    context = {'user': user}
     return render(request, 'base/profile.html', context)
