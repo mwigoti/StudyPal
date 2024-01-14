@@ -23,7 +23,7 @@ nodejs==0.1.1
 optional-django==0.1.0
 packaging==23.2
 Pillow==10.0.1
-psycopg2==2.9.9
+
 pymongo==4.5.0
 
 pytz==2023.3.post1
