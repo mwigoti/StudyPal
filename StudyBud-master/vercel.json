@@ -18,10 +18,12 @@
       {
         "src": "/static/(.*)",
         "dest": "/static/$1"
+          
       },
       {
         "src": "/(.*)",
         "dest": "studybud/wsgi.py"
       }
+        { "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
     ]
   }
