@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -132,19 +134,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-import os
-
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+    BASE_DIR / "static"
+    ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
