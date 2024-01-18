@@ -26,7 +26,16 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+import os
+import dj_database_url
+
+# Get the database URL from the environment variable
+database_url = os.environ.get("DATABASE_URL")
+
+# Parse the database URL using dj_database_url.parse
+DATABASES = {
+    'default': dj_database_url.parse(database_url)
+}
 
 
 # Application definition
