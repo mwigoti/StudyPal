@@ -280,12 +280,14 @@ a {
     display: flex;
     gap: 2rem;
     align-items: center;
-    border-radius: 50%;
+
 }
 
 .header__logo>img {
     height: 3.2rem;
     width: 3.2rem;
+    border-radius: 50%;
+    background-color: var(--color-bg);
 }
 
 .header__logo>h1 {
