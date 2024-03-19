@@ -32,10 +32,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Get the database URL from the environment variable
-database_url = os.environ.get("DATABASE_URL")
+#database_url = os.environ.get("DATABASE_URL")
 
 # Parse the database URL using dj_database_url.parse
-DATABASES = {'default': dj_database_url.parse(database_url)}
+DATABASES = {'default': dj_database_url.parse("postgres://study_pal_official_user:PhzNRV2RFMScJMZcH6DqeD3IX9sD01P1@dpg-cmkbobv109ks739kvqf0-a.oregon-postgres.render.com/study_pal_official")}
 
 # Application definition
 INSTALLED_APPS = [
@@ -136,3 +136,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
